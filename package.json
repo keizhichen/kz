@@ -1,0 +1,17 @@
+{
+  "name": "kz-user-data-analyzer",
+  "version": "1.0.0",
+  "description": "A browser-based file importer that automatically analyzes user data from CSV and JSON files.",
+  "main": "src/analyzer.js",
+  "scripts": {
+    "start": "python3 -m http.server 4173",
+    "test": "node tests/analyzer.test.js"
+  },
+  "keywords": [
+    "data-analysis",
+    "csv",
+    "json",
+    "user-data"
+  ],
+  "license": "MIT"
+}
