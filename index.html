@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>用户数据自动分析器</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">User Data Analyzer</p>
+          <h1>导入文件后，自动分析用户数据</h1>
+          <p class="subtitle">支持 CSV 和 JSON 文件，自动生成数据概览、字段类型、缺失值、重复行、敏感字段提醒和优化建议。</p>
+        </div>
+        <label class="upload-card" for="file-input">
+          <input id="file-input" type="file" accept=".csv,.json,text/csv,application/json" />
+          <span class="upload-icon">⇪</span>
+          <strong>选择文件导入</strong>
+          <small>或把 CSV / JSON 拖到这里</small>
+        </label>
+      </section>
+
+      <section id="status" class="status" aria-live="polite">请先导入包含用户数据的文件。</section>
+
+      <section id="summary" class="summary-grid hidden" aria-label="分析概览"></section>
+
+      <section class="panel hidden" id="recommendations-panel">
+        <h2>智能建议</h2>
+        <ul id="recommendations"></ul>
+      </section>
+
+      <section class="panel hidden" id="columns-panel">
+        <h2>字段分析</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>字段</th>
+                <th>类型</th>
+                <th>缺失</th>
+                <th>唯一值</th>
+                <th>详情</th>
+              </tr>
+            </thead>
+            <tbody id="columns-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="src/analyzer.js"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>
